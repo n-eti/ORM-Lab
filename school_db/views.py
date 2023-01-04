@@ -9,14 +9,14 @@ from .const_data import view_information
 
 
 # Find all students and print their first_name, last_name, and GPA to the terminal
-# Example solution:
+#Example solution:
 def example_solution(request):
 
-    students = Student.objects.all()
+#     students = Student.objects.all()
 
-    for student in students:
-        print(
-            f'First Name: {student.first_name} Last Name: {student.last_name} GPA: {student.gpa}')
+#     for student in students:
+#         print(
+#             f'First Name: {student.first_name} Last Name: {student.last_name} GPA: {student.gpa}')
 
     return complete(request)
 
@@ -59,7 +59,9 @@ SELECT `school_db_student`.`id`,
 # Print out each student's full name and gpa to the terminal
 def problem_one(request):
 
-    return complete(request)
+  students = Student.objects.filter(gpa__gt = 3.0)
+
+  return complete(request)
 
 
 # Supporting Query Method Documentation:
